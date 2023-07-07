@@ -17,7 +17,7 @@ const navLinks = [
     link: '/',
   },
   {
-    title: 'MEMBER REGISTRATION',
+    title: 'REGISTRATION',
     link: '/',
   },
   {
@@ -47,28 +47,38 @@ const Header = () => {
   const MotionLink = motion(Link);
   return (
     <header className=" p-8  bg-black/80   fixed top-0 left-0 right-0 z-30 ">
-      <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ type: 'tween', duration: 0.6 }}
-        className=" flex items-center justify-between w-[98%] sm:w-[90%] mx-auto "
-      >
+      <motion.nav className=" flex items-center justify-between w-[98%] sm:w-[90%] mx-auto ">
         <div className="left text-base md:text-3xl">
-          <MotionLink className="text-white" href={'/'}>
+          <MotionLink
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: -20, opacity: 0 }}
+            transition={{ type: 'tween', duration: 0.6 }}
+            className="text-white"
+            href={'/'}
+          >
             Alaigbo
           </MotionLink>
         </div>
         <div className="right space-x-4 hidden lg:flex items-center self-end">
-          <MotionLink className="text-white" href={'/'}>
+          <MotionLink
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 300 } }}
+            className="text-white"
+            href={'/'}
+          >
             Join The Alaigbo Community
           </MotionLink>
           <MotionLink
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 300 } }}
             href={'/'}
             className="bg-[#00AA00] p-2 rounded-sm text-white"
           >
             INVEST IN ALAIGBO
           </MotionLink>
           <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 300 } }}
             className="flex space-x-2 text-white cursor-pointer"
             onClick={handleMenu}
           >
@@ -95,9 +105,8 @@ const Header = () => {
               initial={{ x: 500 }}
               animate={{ x: -50 }}
               transition={{
-                type: 'spring',
+                type: 'tween',
                 stiffness: 100,
-
                 ease: 'linear',
                 duration: 0.5,
               }}
@@ -138,8 +147,8 @@ const Header = () => {
               initial={{ x: 500 }}
               animate={{ x: -56 }}
               transition={{
-                type: 'spring',
-
+                type: 'tween',
+                stiffness: 100,
                 ease: 'linear',
                 duration: 0.5,
               }}

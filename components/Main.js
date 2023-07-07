@@ -66,12 +66,13 @@ const Main = () => {
       </div>
       <div className="text-center mt-20">
         <MotionLink
+          initial={{ scale: 0.9 }}
           whileHover={{
-            scale: 1.2,
-            transition: { duration: 1 },
+            scale: 1,
+            transition: { duration: 0.3 },
           }}
           href={'/'}
-          className="bg-[#00AA00]  rounded-md px-8 text-white py-3"
+          className="bg-[#00AA00] inline-block rounded-md px-8 text-white py-3"
         >
           INVEST
         </MotionLink>
