@@ -51,7 +51,7 @@ const Header = () => {
         <div className="left text-base md:text-3xl">
           <MotionLink
             initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             transition={{ type: 'tween', duration: 0.6 }}
             className="text-white"
             href={'/'}
