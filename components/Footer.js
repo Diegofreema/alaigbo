@@ -65,11 +65,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, duration: 0.8 }}
-        >
+        <motion.div className="md:ml-16 flex flex-col items-center ">
           <p className="text-white mb-8">CONNECT WITH US</p>
           <div className="flex space-x-3 items-center">
             {socialIcon.map(({ link, Icon }, i) => (
@@ -81,7 +77,12 @@ const Footer = () => {
           </div>
         </motion.div>
       </motion.div>
-      <motion.div className="lg:text-right text-center md:pr-8 mt-4 pb-4">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 100, duration: 0.8 }}
+        className="lg:text-right text-center md:pr-8 mt-4 pb-4"
+      >
         <p className="text-xs text-white">
           Copyright © {year}. ALAIGBO All rights reserved Privacy Policy Terms &
           Conditions

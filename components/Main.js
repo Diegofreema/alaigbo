@@ -13,7 +13,7 @@ const Main = () => {
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', duration: 3000 }}
+          transition={{ type: 'spring', duration: 0.5 }}
           className="border border-black rounded-md md:h-[320px]  h-[200px]"
         ></motion.div>
         <motion.div
