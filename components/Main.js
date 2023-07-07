@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Main = () => {
+  const MotionLink = motion(Link);
   return (
     <div className="bg-[#FEFEFE] min-h-screen py-[100px] px-4">
       <h1 className="text-center text-3xl  md:text-5xl font-bold text-[#F37435] mb-16">
@@ -64,12 +65,16 @@ const Main = () => {
         </motion.div>
       </div>
       <div className="text-center mt-20">
-        <Link
+        <MotionLink
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 1 },
+          }}
           href={'/'}
           className="bg-[#00AA00]  rounded-md px-8 text-white py-3"
         >
           INVEST
-        </Link>
+        </MotionLink>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const socialIcon = [
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-[#0D0C0DE6] px-4 ">
+    <footer className="bg-[#0D0C0DE6] px-4 pb-6 ">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
