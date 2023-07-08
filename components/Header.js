@@ -48,7 +48,11 @@ const Header = () => {
   return (
     <header className=" p-8  bg-black/80   fixed top-0 left-0 right-0 z-30 ">
       <motion.nav className=" flex items-center justify-between w-[98%] sm:w-[90%] mx-auto ">
-        <div className="left text-base md:text-3xl">
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+          className="left text-base md:text-3xl"
+        >
           <MotionLink
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -58,19 +62,16 @@ const Header = () => {
           >
             Alaigbo
           </MotionLink>
-        </div>
-        <div className="right space-x-4 hidden lg:flex items-center self-end">
-          <MotionLink
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 300 } }}
-            className="text-white"
-            href={'/'}
-          >
+        </motion.div>
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+          className="right space-x-4 hidden lg:flex items-center self-end"
+        >
+          <MotionLink className="text-white" href={'/'}>
             Join The Alaigbo Community
           </MotionLink>
           <MotionLink
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 300 } }}
             href={'/'}
             className="bg-[#00AA00] p-2 rounded-sm text-white"
           >
@@ -78,7 +79,7 @@ const Header = () => {
           </MotionLink>
           <motion.div
             initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 300 } }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
             className="flex space-x-2 text-white cursor-pointer"
             onClick={handleMenu}
           >
@@ -98,7 +99,7 @@ const Header = () => {
               />
             </svg>
           </motion.div>
-        </div>
+        </motion.div>
         <AnimatePresence>
           {menuIsOpen && (
             <motion.div
