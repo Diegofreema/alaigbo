@@ -6,7 +6,7 @@ import React from 'react';
 
 const Event = () => {
   return (
-    <div className="">
+    <div className=" overflow-x-hidden">
       <EventNotification />
       <EventTimer />
       <Speakers />
