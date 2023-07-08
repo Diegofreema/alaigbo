@@ -157,6 +157,7 @@ const Register = () => {
               label={'Reason(s) for coming (optional)'}
               value={reason}
               onChange={(event) => setReason(event.currentTarget.value)}
+              minRows={5}
             />
           </div>
           <div className="md:w-[50%] space-y-4 mt-8">
