@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Button from './Button';
 
 const Main = () => {
   const MotionLink = motion(Link);
@@ -65,7 +66,7 @@ const Main = () => {
         </motion.div>
       </div>
       <div className="text-center mt-20">
-        <MotionLink
+        <Button
           initial={{ scale: 0.9 }}
           whileHover={{
             scale: 1,
@@ -73,9 +74,8 @@ const Main = () => {
           }}
           href={'/'}
           className="bg-[#00AA00] inline-block rounded-md px-8 text-white py-3"
-        >
-          INVEST
-        </MotionLink>
+          title="INVEST"
+        />
       </div>
     </div>
   );

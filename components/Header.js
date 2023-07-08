@@ -9,16 +9,16 @@ import NavLinks from './NavLinks';
 
 const navLinks = [
   {
-    title: 'Abstract',
+    title: 'ABSTRACT',
     link: '/',
   },
   {
     title: 'EVENTS',
-    link: '/',
+    link: '/event',
   },
   {
     title: 'REGISTRATION',
-    link: '/',
+    link: '/register',
   },
   {
     title: 'INVESTOR',
@@ -121,7 +121,7 @@ const Header = () => {
                 onClick={() => setMenuIsOpen(false)}
               />
               {navLinks.map((item, i) => (
-                <NavLinks key={i} item={item} />
+                <NavLinks key={i} item={item} setMenuIsOpen={setMenuIsOpen} />
               ))}
             </motion.div>
           )}
@@ -163,7 +163,7 @@ const Header = () => {
                 onClick={() => setMenuMobile(false)}
               />
               {navLinks.map((item, i) => (
-                <NavLinks key={i} item={item} />
+                <NavLinks key={i} item={item} setMenuMobile={setMenuMobile} />
               ))}
             </motion.div>
           )}

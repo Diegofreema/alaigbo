@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
-const NavLinks = ({ item }) => {
+const NavLinks = ({ item, setMenuIsOpen, setMenuMobile }) => {
   const { link, title } = item;
   const MotionLink = motion(Link);
   const quote = {
@@ -37,6 +37,10 @@ const NavLinks = ({ item }) => {
       animate="animate"
       className="text-white w-fit py-2 px-4 mb-4"
       href={link}
+      onClick={() => {
+        setMenuIsOpen(false);
+        setMenuIsOpen(false);
+      }}
     >
       {title.split(' ').map((word, index) => (
         <motion.span variants={singleWord} key={index} className="inline-block">
