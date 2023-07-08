@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
-import Button from './Button';
+import Button from '../UI/Button';
 
 const Main = () => {
   const MotionLink = motion(Link);
