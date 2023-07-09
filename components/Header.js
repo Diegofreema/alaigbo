@@ -29,7 +29,7 @@ const navLinks = [
     link: '/',
   },
   {
-    title: 'DEPARTMENT',
+    title: 'DEPARTMENTS',
     link: '/department',
   },
   {
@@ -46,7 +46,7 @@ const Header = () => {
   };
   const MotionLink = motion(Link);
   return (
-    <header className=" p-8  bg-black/80   fixed top-0 left-0 right-0 z-30 ">
+    <header className=" p-8  bg-black  fixed top-0 left-0 right-0 z-30 ">
       <motion.nav className=" flex items-center justify-between w-[98%] sm:w-[90%] mx-auto ">
         <motion.div
           initial={{ y: -20, opacity: 0 }}

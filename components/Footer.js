@@ -71,6 +71,7 @@ const Footer = () => {
                   className="inline-block"
                   href={link}
                   key={i}
+                  target="_blank"
                 >
                   {' '}
                   <Icon color="white" size={25} />{' '}
