@@ -13,23 +13,17 @@ import {
 
 const socialIcon = [
   {
-    link: '/',
+    link: 'https://twitter.com/AlaIgboYouth',
     Icon: FaTwitter,
   },
+
   {
-    link: '/',
-    Icon: FaFacebookF,
-  },
-  {
-    link: '/',
+    link: 'https://chat.whatsapp.com/FnBEvJrBkL7ARqkSEZTZNc',
     Icon: FaWhatsapp,
   },
+
   {
-    link: '/',
-    Icon: FaYoutube,
-  },
-  {
-    link: '/',
+    link: 'https://www.instagram.com/AlaIgboYouth',
     Icon: FaInstagram,
   },
 ];
