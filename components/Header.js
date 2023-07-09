@@ -10,7 +10,7 @@ import NavLinks from './NavLinks';
 const navLinks = [
   {
     title: 'ABSTRACT',
-    link: '/',
+    link: '/abstract',
   },
   {
     title: 'EVENTS',
@@ -30,7 +30,7 @@ const navLinks = [
   },
   {
     title: 'DEPARTMENT',
-    link: '/',
+    link: '/department',
   },
   {
     title: 'CONTACT',
