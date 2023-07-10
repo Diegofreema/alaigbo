@@ -6,10 +6,10 @@ function AccordionLabel({ label, description }) {
   return (
     <Group noWrap>
       <div>
-        <Title order={3} fw={'bold'}>
+        <Title order={4} fw={'bold'}>
           {label}
         </Title>
-        <Text fs={'italic'} size="md" fw={'normal'} color="dimmed" weight={400}>
+        <Text fs={'italic'} size="sm" fw={'normal'} color="dimmed" weight={400}>
           {description}
         </Text>
       </div>
