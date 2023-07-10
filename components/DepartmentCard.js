@@ -1,9 +1,12 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+const MotionLink = motion(Link);
 const DepartmentCard = ({ item }) => {
   return (
-    <motion.div
+    <MotionLink
+      href={`/department/${item.id}`}
       initial={{ scale: 0.9, backgroundColor: '#FFFFFF' }}
       whileHover={{
         backgroundColor: [
@@ -19,8 +22,8 @@ const DepartmentCard = ({ item }) => {
       }}
       className="bg-white h-[200px] rounded-sm flex items-center justify-center font-bold cursor-pointer"
     >
-      {item}
-    </motion.div>
+      {item.department}
+    </MotionLink>
   );
 };
 

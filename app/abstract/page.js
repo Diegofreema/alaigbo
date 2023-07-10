@@ -5,6 +5,7 @@ import Investors from '@/components/Abstract/Investors';
 import Mission from '@/components/Abstract/Mission';
 import Strategy from '@/components/Abstract/Strategy';
 import Vision from '@/components/Abstract/Vision';
+import Demo from '@/components/Accordion';
 import { Text } from '@mantine/core';
 import React from 'react';
 
@@ -13,12 +14,9 @@ const Abstract = () => {
     <div className="min-h-screen md:py-[100px] py-[80px]">
       <SemiHeader>ABSTRACT</SemiHeader>
       <div className="container w-[98%] md:w-[85%] lg:w-[70%] space-y-32  mx-auto px-4">
-        <Identity />
-        <Vision />
-        <Mission />
-        <Strategy />
-        <Investors />
-        <div className="mt-32 space-y-8">
+        <Demo />
+
+        <div className="mt-16 space-y-8">
           <Text fw={600} fs={'lg'}>
             We sincerely welcome your philanthropic and strategic partnership
             towards the economic, social, and political development of Alaigbo.
