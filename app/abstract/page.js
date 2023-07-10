@@ -1,10 +1,6 @@
 'use client';
 import SemiHeader from '@/UI/SemiHeader';
-import Identity from '@/components/Abstract/Identity';
-import Investors from '@/components/Abstract/Investors';
-import Mission from '@/components/Abstract/Mission';
-import Strategy from '@/components/Abstract/Strategy';
-import Vision from '@/components/Abstract/Vision';
+
 import Demo from '@/components/Accordion';
 import { Text } from '@mantine/core';
 import React from 'react';
