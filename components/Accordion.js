@@ -25,7 +25,7 @@ function Demo() {
       </Accordion.Control>
       <Accordion.Panel>
         {item.content.map((text, i) => (
-          <Text key={i} size="sm" mb={10}>
+          <Text className="leading-relaxed" key={i} size="sm" mb={10}>
             {text}
           </Text>
         ))}
