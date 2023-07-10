@@ -12,7 +12,7 @@ const Register = () => {
   const [number, setNumber] = useState('');
   const [location, setLocation] = useState('');
   const [accommodation, setAccommodation] = useState('Yes');
-  const [participant, setParticipant] = useState('VIP');
+  const [participant, setParticipant] = useState('Regular');
   const [guest, setGuest] = useState('Yes');
   const [reason, setReason] = useState('');
   const [update, setUpdate] = useState('Yes');
@@ -140,6 +140,7 @@ const Register = () => {
               value={participant}
               setValue={setParticipant}
               data={[
+                { value: 'VVIP', label: 'VVIP' },
                 { value: 'VIP', label: 'VIP' },
                 { value: 'Not VIP', label: 'Regular' },
               ]}
