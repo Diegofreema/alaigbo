@@ -52,7 +52,11 @@ const NavLinks = ({ item, setMenuIsOpen, setMenuMobile }) => {
       }}
     >
       {title.split(' ').map((word, index) => (
-        <motion.span variants={singleWord} key={index} className="inline-block">
+        <motion.span
+          variants={singleWord}
+          key={index}
+          className="inline-block i"
+        >
           {word}&nbsp;
         </motion.span>
       ))}
