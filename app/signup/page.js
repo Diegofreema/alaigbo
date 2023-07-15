@@ -1,16 +1,23 @@
 'use client';
 import InputComponent from '@/UI/InputComponent';
 import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/use-toast';
+import { AuthContext } from '@/lib/AuthContext';
 
 import { FileInput, Group, Text, Textarea, Title } from '@mantine/core';
 import { DatePickerInput } from '@mantine/dates';
 import { Dropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { IconUpload, IconPhoto, IconX } from '@tabler/icons-react';
 import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import { Loader2, LogIn } from 'lucide-react';
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import React, { startTransition, useContext, useState } from 'react';
 
 const Login = () => {
+  const router = useRouter();
+  const { logIn } = useContext(AuthContext);
+  const [user, setUser] = useState();
   const [firstName, setFirstName] = useState('');
   const [middleName, setMiddleName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -26,16 +33,17 @@ const Login = () => {
   const [village, setVillage] = useState('');
   const [gender, setGender] = useState('');
   const [interest, setInterest] = useState('');
-  const [bio, setBio] = useState('gfhgf');
+  const [bio, setBio] = useState('');
   const [image, setImage] = useState(null);
   const { isLoading, mutate } = useMutation({
     mutationFn: async () => {
       const { data } = await axios.post('http://localhost:3000/api/auth', {
-        username,
+        username: firstName,
         email,
         password,
       });
-
+      setUser(data);
+      console.log(data);
       return data;
     },
     onError: (err) => {
@@ -48,15 +56,18 @@ const Login = () => {
     onSuccess: () => {
       startTransition(() => {
         logIn();
+
         router.push('/');
       });
       return toast({
-        title: 'Login successful',
-        description: 'You have been logged in',
+        title: 'Registration successful',
+        description: `You have been Registered ${user.username}`,
       });
     },
   });
-  console.log(bio);
+
+  console.log(user);
+
   return (
     <div className="min-h-screen pt-[120px] pb-[100px]">
       <div className="w-[95%] md:w-[80%] mx-auto">
@@ -196,7 +207,7 @@ const Login = () => {
             >
               {!isLoading && <LogIn className="mr-3" />}{' '}
               {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}{' '}
-              Login
+              Sign up
             </Button>
           </div>
         </div>

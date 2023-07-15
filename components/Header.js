@@ -44,7 +44,7 @@ const navLinks = [
 
 const Header = () => {
   const pathName = usePathname();
-  let session = localStorage.getItem('isLoggedIn');
+  const session = localStorage.getItem('isLoggedIn');
   const isLoggedIn = Boolean(session);
   console.log(isLoggedIn);
   const { logOut } = useContext(AuthContext);
@@ -146,12 +146,28 @@ const Header = () => {
               ))}
               {isLoggedIn && (
                 <ButtonLucid
-                  onClick={() => logOut()}
+                  onClick={() => {
+                    logOut();
+                    setMenuIsOpen(false);
+                  }}
                   className="bg-[#DE5000] hover:bg-[#a4460f] transition duration-300"
                 >
                   Sign Out
                 </ButtonLucid>
               )}
+              {!isLoggedIn && pathName !== '/signIn' ? (
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+                  onClick={() => setMenuIsOpen(false)}
+                >
+                  <Button
+                    title={'Log in'}
+                    className={'py-2 px-3'}
+                    href="/signIn"
+                  />
+                </motion.div>
+              ) : null}
             </motion.div>
           )}
         </AnimatePresence>
@@ -195,6 +211,30 @@ const Header = () => {
               {navLinks.map((item, i) => (
                 <NavLinks key={i} item={item} setMenuMobile={setMenuMobile} />
               ))}
+              {isLoggedIn && (
+                <ButtonLucid
+                  onClick={() => {
+                    logOut();
+                    setMenuMobile(false);
+                  }}
+                  className="bg-[#DE5000] hover:bg-[#a4460f] transition duration-300"
+                >
+                  Sign Out
+                </ButtonLucid>
+              )}
+              {!isLoggedIn && pathName !== '/signIn' ? (
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+                  onClick={() => setMenuMobile(false)}
+                >
+                  <Button
+                    title={'Log in'}
+                    className={'py-2 px-3'}
+                    href="/signIn"
+                  />
+                </motion.div>
+              ) : null}
             </motion.div>
           )}
         </AnimatePresence>
