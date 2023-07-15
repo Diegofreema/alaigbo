@@ -44,7 +44,10 @@ const navLinks = [
 
 const Header = () => {
   const pathName = usePathname();
-  const session = window.localStorage.getItem('isLoggedIn');
+  let session;
+  if (typeof window !== 'undefined' && window.localStorage) {
+    session = window.localStorage.getItem('isLoggedIn');
+  }
   const isLoggedIn = Boolean(session);
   console.log(isLoggedIn);
   const { logOut } = useContext(AuthContext);
