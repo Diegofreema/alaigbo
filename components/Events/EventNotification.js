@@ -43,6 +43,7 @@ const EventNotification = () => {
             transition: { duration: 0.3 },
           }}
           title="Register"
+          className={'px-2'}
         />
       </div>
     </div>

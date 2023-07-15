@@ -7,7 +7,7 @@ const Button = ({ className, title, ...props }) => {
   return (
     <MotionLink
       {...props}
-      className={`bg-[#00AA00] inline-block rounded-md px-5 text-white py-2 ${className}`}
+      className={`bg-[#00AA00] inline-block rounded-md px-3 text-white py-2 ${className}`}
     >
       {title}
     </MotionLink>

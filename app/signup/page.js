@@ -11,6 +11,7 @@ import { IconUpload, IconPhoto, IconX } from '@tabler/icons-react';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { Loader2, LogIn } from 'lucide-react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { startTransition, useContext, useState } from 'react';
 
@@ -210,6 +211,15 @@ const Login = () => {
               Sign up
             </Button>
           </div>
+        </div>
+        <div className="flex items-center space-x-2 mt-8">
+          <p>Already have an account?</p>{' '}
+          <Link
+            href={'/signIn'}
+            className=" text-blue-600 rounded-md transition hover:text-blue-700 duration-300"
+          >
+            Log in
+          </Link>
         </div>
       </div>
     </div>

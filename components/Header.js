@@ -76,54 +76,45 @@ const Header = () => {
             Alaigbo
           </MotionLink>
         </motion.div>
-        {isLoggedIn && (
+
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+          className="right space-x-4 hidden lg:flex items-center self-end"
+        >
+          <MotionLink className="text-white" href={'/'}>
+            Join The Alaigbo Community
+          </MotionLink>
+          <MotionLink
+            href={'/'}
+            className="bg-[#00AA00] p-2 rounded-sm text-white"
+          >
+            INVEST IN ALAIGBO
+          </MotionLink>
           <motion.div
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-            className="right space-x-4 hidden lg:flex items-center self-end"
+            className="flex space-x-2 text-white cursor-pointer"
+            onClick={handleMenu}
           >
-            <MotionLink className="text-white" href={'/'}>
-              Join The Alaigbo Community
-            </MotionLink>
-            <MotionLink
-              href={'/'}
-              className="bg-[#00AA00] p-2 rounded-sm text-white"
+            <h3>Menu</h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="w-6 h-6"
             >
-              INVEST IN ALAIGBO
-            </MotionLink>
-            <motion.div
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-              className="flex space-x-2 text-white cursor-pointer"
-              onClick={handleMenu}
-            >
-              <h3>Menu</h3>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            </motion.div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
           </motion.div>
-        )}{' '}
-        {!isLoggedIn && pathName !== '/signIn' ? (
-          <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-            className="hidden lg:block"
-          >
-            <Button title={'Log in'} className={'py-2 px-3'} href="/signIn" />
-          </motion.div>
-        ) : null}
+        </motion.div>
+
         <AnimatePresence>
           {menuIsOpen && (
             <motion.div
@@ -155,22 +146,9 @@ const Header = () => {
                   }}
                   className="bg-[#DE5000] hover:bg-[#a4460f] transition duration-300"
                 >
-                  Sign Out
+                  Log Out
                 </ButtonLucid>
               )}
-              {!isLoggedIn && pathName !== '/signIn' ? (
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-                  onClick={() => setMenuIsOpen(false)}
-                >
-                  <Button
-                    title={'Log in'}
-                    className={'py-2 px-3'}
-                    href="/signIn"
-                  />
-                </motion.div>
-              ) : null}
             </motion.div>
           )}
         </AnimatePresence>
@@ -222,22 +200,9 @@ const Header = () => {
                   }}
                   className="bg-[#DE5000] hover:bg-[#a4460f] transition duration-300"
                 >
-                  Sign Out
+                  Log Out
                 </ButtonLucid>
               )}
-              {!isLoggedIn && pathName !== '/signIn' ? (
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-                  onClick={() => setMenuMobile(false)}
-                >
-                  <Button
-                    title={'Log in'}
-                    className={'py-2 px-3'}
-                    href="/signIn"
-                  />
-                </motion.div>
-              ) : null}
             </motion.div>
           )}
         </AnimatePresence>

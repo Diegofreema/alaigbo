@@ -81,15 +81,15 @@ const SignInPage = () => {
             Login
           </Button>
         </div>
-      </div>
-      <div className="flex items-center space-x-2 mt-8">
-        <p>Dont&apos;t have an account?</p>{' '}
-        <Link
-          href={'/signup'}
-          className=" text-blue-600 rounded-md transition hover:text-blue-700 duration-300"
-        >
-          Sign up
-        </Link>
+        <div className="flex items-center justify-center space-x-2 mt-8">
+          <p>Dont&apos;t have an account?</p>{' '}
+          <Link
+            href={'/signup'}
+            className=" text-blue-600 rounded-md transition hover:text-blue-700 duration-300"
+          >
+            Sign up
+          </Link>
+        </div>
       </div>
     </div>
   );
