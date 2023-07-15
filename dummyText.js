@@ -118,14 +118,86 @@ We strive to put our domestic firms on the world map by adopting the best global
   },
 ];
 
-export const texts = [];
+export const texts = [
+  {
+    id: '1',
 
-export const visionText = [];
+    label: '1. Skilled Workforce',
 
-export const missionText = [];
+    content: [
+      `Our focus on developing a highly skilled workforce is a cornerstone of our vision for a prosperous Alaigbo. We invest in quality education and vocational training programs to equip individuals with the knowledge and skills necessary to meet the evolving demands of the modern economy. By nurturing a skilled workforce, we empower our people to seize opportunities and contribute meaningfully to their communities. `,
+    ],
+  },
+  {
+    id: '2',
 
-export const strategyText = [,];
+    label: '2. Entrepreneurship and Innovation:',
 
-export const investorText = [];
+    content: [
+      `We foster a culture of entrepreneurship and innovation, recognizing the crucial role they play in driving economic growth. Alaigbo Youth Forum provides support, resources, and mentoring to aspiring entrepreneurs, enabling them to turn their ideas into successful ventures. We believe that by nurturing a vibrant startup ecosystem, we can create jobs, attract investments, and stimulate technological advancements in various sectors. `,
+    ],
+  },
+  {
+    id: '3',
 
-export const numberedText = [``];
+    label: '3. Talent Retention and Attraction: ',
+
+    content: [
+      `To retain and attract top talent, Alaigbo Youth Forum strives to provide an enabling environment that values and rewards excellence. We offer competitive opportunities, attractive remuneration packages, and a supportive work-life balance. By nurturing a conducive ecosystem for talent, we aim to retain our best minds while attracting skilled individuals from across the nation and beyond. `,
+    ],
+  },
+  {
+    id: '4',
+
+    label: '4. Collaboration and Knowledge Exchange:',
+
+    content: [
+      `We promote collaboration and knowledge exchange within Alaigbo's human capital ecosystem. Through partnerships between academia, industry, and government, we foster research and development, 
+      knowledge transfer, and innovation-driven initiatives. By leveraging collective expertise, we create an environment where ideas flourish and solutions to complex challenges are born. `,
+    ],
+  },
+  {
+    id: '5',
+
+    label: 'Conclusion',
+
+    content: [
+      `Alaigbo Youth Forum recognizes that human capital is the driving force behind our region's progress. By investing in education, fostering entrepreneurship, nurturing talent, and promoting collaboration, we unlock the potential of our people to build a vibrant and sustainable future. Join us on this transformative journey as we empower our human capital to shape the destiny of Alaigbo and contribute to the prosperity of our nation.  `,
+    ],
+  },
+];
+
+export const writeUp = [
+  {
+    id: '1',
+    label: '1. Strategic Location and Infrastructure: ',
+    content: `Alaigbo's strategic location at the heart of the nation positions it as a hub for regional trade and connectivity. The region boasts a robust infrastructure network, including modern transportation systems, reliable power supply, and advanced telecommunications. These infrastructural advantages ensure seamless access to markets and facilitate efficient business operations`,
+  },
+  {
+    id: '2',
+    label: '2. Thriving Sectors:  ',
+    content: `Alaigbo is home to thriving sectors that present lucrative investment opportunities. From agriculture and manufacturing to technology and renewable energy, our region offers diverse avenues for investment. We provide comprehensive sectoral insights, highlighting the potential for growth, market demand, and competitive advantages within each sector. 
+ `,
+  },
+  {
+    id: '3',
+    label: '3. Business-Friendly Policies: ',
+    content: ` Alaigbo embraces a business-friendly environment, driven by policies that encourage investment and entrepreneurship. Our government is committed to creating an enabling ecosystem, including streamlined regulations, attractive tax incentives, and investor-friendly policies. We aim to minimize bureaucratic hurdles and foster a supportive framework that nurtures business growth and success`,
+  },
+  {
+    id: '4',
+    label: '1. Strategic Location and Infrastructure: 4. Abundant Resources: ',
+    content: `Alaigbo is blessed with abundant natural resources, including fertile farmlands, mineral deposits, and renewable energy sources. These resources provide a solid foundation for investment in agriculture, mining, and clean energy projects. We invite investors to tap into these resources responsibly, creating sustainable ventures that contribute to economic growth and environmental conservation.`,
+  },
+  {
+    id: '5',
+    label: '5. Skilled Workforce: ',
+    content: `Our region boasts a highly skilled and motivated workforce. With a focus on education and vocational training, we ensure that our human capital possesses the expertise necessary to drive innovation and productivity. Investors can tap into this pool of talent, fostering collaborations and fueling the growth of their businesses. `,
+  },
+
+  {
+    id: '6',
+    label: 'Conclusion: ',
+    content: `Alaigbo presents a compelling investment destination, offering a blend of strategic advantages, thriving sectors, and a supportive business environment. We invite you to explore the wealth of opportunities that await you in our region. Whether you seek to invest in agriculture, manufacturing, technology, or renewable energy, Alaigbo provides a fertile ground for growth and returns. Invest in Alaigbo and be a part of our journey towards prosperity and sustainable development.  `,
+  },
+];

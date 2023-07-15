@@ -1,42 +1,29 @@
 'use client';
-import { list } from '@/dummyText';
+
 import { Accordion, Group, Text, Title } from '@mantine/core';
 
-function AccordionLabel({ label, description }) {
+function AccordionLabel({ label }) {
   return (
     <Group noWrap>
       <div>
         <Title order={4} fw={'bold'}>
           {label}
         </Title>
-        {description && (
-          <Text
-            fs={'italic'}
-            size="sm"
-            fw={'normal'}
-            color="dimmed"
-            weight={400}
-          >
-            {description}
-          </Text>
-        )}
       </div>
     </Group>
   );
 }
 
-function Demo() {
-  const items = list.map((item) => (
+function DemoTwo({ data }) {
+  const items = data.map((item) => (
     <Accordion.Item value={item.id} key={item.label}>
       <Accordion.Control>
         <AccordionLabel {...item} />
       </Accordion.Control>
       <Accordion.Panel>
-        {item.content.map((text, i) => (
-          <Text className="leading-relaxed" key={i} size="md" mb={10}>
-            {text}
-          </Text>
-        ))}
+        <Text className="leading-relaxed" size="md" mb={10}>
+          {item.content}
+        </Text>
       </Accordion.Panel>
     </Accordion.Item>
   ));
@@ -47,4 +34,4 @@ function Demo() {
   );
 }
 
-export default Demo;
+export default DemoTwo;

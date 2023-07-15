@@ -8,6 +8,7 @@ const InputComponent = ({ value, setValue, label, type }) => {
       onChange={(event) => setValue(event.currentTarget.value)}
       label={label}
       type={type || 'text'}
+       styles={{ input: { border: '1px solid #DE5000',  } }}
     />
   );
 };

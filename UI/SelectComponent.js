@@ -9,6 +9,7 @@ const SelectComponent = ({ data, label, setValue, value }) => {
       value={value}
       onChange={setValue}
       data={data}
+       styles={{ input: { border: '1px solid #DE5000',  } }}
     />
   );
 };

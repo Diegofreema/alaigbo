@@ -1,34 +1,100 @@
 'use client';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import { redirect } from 'next/navigation';
+import InputComponent from '@/UI/InputComponent';
+import { Button } from '@/components/ui/button';
 
-import React from 'react';
-import { authOptions } from '../api/auth/[...nextauth]/route';
-import { getServerSession } from 'next-auth/next';
-// {
-//     required: true,
-//     onUnauthenticated: () => {
-//       redirect('/signIn?callbackUrl=/register')
-//     }
-//   }
-const SignIn = () => {
-  const { data: session } = useSession();
+import { useToast } from '@/components/ui/use-toast';
+import { AuthContext } from '@/lib/AuthContext';
 
-  if (session && session.user) {
-    return (
-      <div className="mt-[100px]">
-        Signed in as {session?.user?.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
-    );
-  }
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
+import { Loader2, LogIn } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { startTransition, useContext, useEffect, useState } from 'react';
+
+const SignInPage = () => {
+  const [username, setUsername] = useState('diego');
+  const [email, setEmail] = useState('diego@gmail.com');
+  const [password, setPassword] = useState('12354657');
+  const router = useRouter();
+  const { toast } = useToast();
+  const { logIn } = useContext(AuthContext);
+  useEffect(() => {}, []);
+
+  const { isLoading, mutate } = useMutation({
+    mutationFn: async () => {
+      const { data } = await axios.post('http://localhost:3000/api/auth', {
+        username,
+        email,
+        password,
+      });
+
+      return data;
+    },
+    onError: (err) => {
+      return toast({
+        title: `${err.message}`,
+        description: 'An Error occurred',
+        variant: 'destructive',
+      });
+    },
+    onSuccess: () => {
+      startTransition(() => {
+        logIn();
+        router.push('/');
+      });
+      return toast({
+        title: 'Login successful',
+        description: 'You have been logged in',
+      });
+    },
+  });
 
   return (
-    <div className="mt-[100px]">
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+    <div className="h-screen flex items-center justify-center flex-col">
+      <div className="sm:w-[50%]  gap-4 w-[95%] grid grid-cols-1">
+        <InputComponent
+          type="text"
+          value={username}
+          setValue={setUsername}
+          label={'Your Email'}
+        />
+        <InputComponent
+          type="email"
+          value={email}
+          setValue={setEmail}
+          label={'Your Email'}
+        />
+        <InputComponent
+          type="password"
+          value={password}
+          setValue={setPassword}
+          label={'Your Password'}
+        />
+        <div className="flex justify-center">
+          <Button
+            disabled={isLoading}
+            className="bg-[#DE5000] hover:bg-[#a4460f] transition duration-300"
+            onClick={() => mutate()}
+          >
+            {!isLoading && <LogIn className="mr-3" />}{' '}
+            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}{' '}
+            Login
+          </Button>
+        </div>
+      </div>
+      <div className="flex items-center space-x-2 mt-8">
+        <p>Dont&apos;t have an account?</p>{' '}
+        <Link
+          href={'/signup'}
+          className=" text-blue-600 rounded-md transition hover:text-blue-700 duration-300"
+        >
+          Sign up
+        </Link>
+      </div>
     </div>
   );
+  // return <SignIn />;
 };
 
-export default SignIn;
+export default SignInPage;
