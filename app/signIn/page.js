@@ -13,13 +13,12 @@ import { useRouter } from 'next/navigation';
 import { startTransition, useContext, useEffect, useState } from 'react';
 
 const SignInPage = () => {
-  const [username, setUsername] = useState('diego');
-  const [email, setEmail] = useState('diego@gmail.com');
-  const [password, setPassword] = useState('12354657');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
   const { toast } = useToast();
   const { logIn } = useContext(AuthContext);
-  useEffect(() => {}, []);
 
   const { isLoading, mutate } = useMutation({
     mutationFn: async () => {
